@@ -14,5 +14,5 @@
 
 
 variable "project" {
-    project = "customercloud-deployment"
+    default = "customercloud-deployment"
 }
