@@ -13,4 +13,6 @@
 # limitations under the License.
 
 
-variable "project" {}
+variable "project" {
+    project = "customercloud-deployment"
+}

@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "PROJECT_ID-tfstate"
+    bucket = "customercloud-deployment-terraform_state_Alek"
     prefix = "env/dev"
   }
 }
