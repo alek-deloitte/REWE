@@ -21,15 +21,22 @@ provider "google" {
   project = "${var.project}"
 }
 
-module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
+resource "google_storage_bucket" "bucket-for-state" {
+  name = "customercloud-deployment-terraform-state-alek-0"
+  location = "EU"
+  uniform_bucket_level_access = true
 }
+
+# module "vpc" {
+#   source  = "../../modules/vpc"
+#   project = "${var.project}"
+#   env     = "${local.env}"
+# }
 
 # resource "google_project_service" "project" {
 #   project = "${var.project}"
 #   service   = "cloudbilling.googleapis.com"
 # }
 
-# auto created bucket, vpc, 
+#auto created bucket, vpc, 
+#required persmissions: serviceusage.services.enable
