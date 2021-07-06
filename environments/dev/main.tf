@@ -29,5 +29,5 @@ provider "google" {
 
 resource "google_project_service" "project" {
   project = "${var.project}"
-  services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com", "cloudbilling.googleapis.com", "compute.googleapis.com"]
+  service   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com", "cloudbilling.googleapis.com", "compute.googleapis.com"]
 }
