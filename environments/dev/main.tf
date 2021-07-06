@@ -24,7 +24,7 @@ provider "google" {
 resource "google_storage_bucket" "bucket-for-state" {
   name = "customercloud-deployment-terraform-state-alek-0"
   location = "EU"
-  uniform_bucket_level_access = true
+  uniform_bucket_level_access = true 
 }
 
 # module "vpc" {
