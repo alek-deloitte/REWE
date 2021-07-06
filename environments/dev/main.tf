@@ -27,7 +27,7 @@ provider "google" {
 #   env     = "${local.env}"
 # }
 
-resource "google_project_service" "project" {
-  project = "${var.project}"
-  service   = "cloudbilling.googleapis.com"
-}
+# resource "google_project_service" "project" {
+#   project = "${var.project}"
+#   service   = "cloudbilling.googleapis.com"
+# }
