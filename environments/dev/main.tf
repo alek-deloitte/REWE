@@ -38,5 +38,7 @@ resource "google_storage_bucket" "bucket-for-state" {
 #   service   = "cloudbilling.googleapis.com"
 # }
 
-#auto created bucket, vpc, 
+#auto created bucket, vpc, clean up
 #required persmissions: serviceusage.services.enable
+
+# is it possible to create new bucket and store state there within first run of configuration file? or you must update it?
