@@ -13,5 +13,8 @@
 # limitations under the License.
 
 
-variable "project" {}
+variable "project" {
+    default = "customercloud-deployment"
+}
+
 variable "env" {}

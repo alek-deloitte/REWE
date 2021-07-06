@@ -21,13 +21,15 @@ provider "google" {
   project = "${var.project}"
 }
 
-# module "vpc" {
-#   source  = "../../modules/vpc"
-#   project = "${var.project}"
-#   env     = "${local.env}"
-# }
+module "vpc" {
+  source  = "../../modules/vpc"
+  project = "${var.project}"
+  env     = "${local.env}"
+}
 
 # resource "google_project_service" "project" {
 #   project = "${var.project}"
 #   service   = "cloudbilling.googleapis.com"
 # }
+
+# auto created bucket, vpc, 
