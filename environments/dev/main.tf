@@ -30,7 +30,7 @@ resource "google_storage_bucket" "bucket-for-state" {
 module "vpc" {
   source  = "../../modules/vpc"
   project = "${var.project}"
-  env     = "${local.env}" 
+  env     = "${local.env}"  
 }
 
 # resource "google_project_service" "project" {
