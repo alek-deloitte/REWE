@@ -15,7 +15,7 @@
 
 terraform {
   backend "gcs" {
-    bucket = "customercloud-deployment-terraform_state_Alek"
+    bucket = "customercloud-deployment-terraform-state-alek"
     prefix = "env/dev"
   }
 }
