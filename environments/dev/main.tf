@@ -27,14 +27,7 @@ module "vpc" {
   env     = "${local.env}"
 }
 
-module "http_server" {
-  source  = "../../modules/http_server"
+resource "google_project_services" "project" {
   project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
-
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
+  services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com", "cloudbilling.googleapis.com", "compute.googleapis.com"]
 }
