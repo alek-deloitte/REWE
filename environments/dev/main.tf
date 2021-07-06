@@ -21,13 +21,13 @@ provider "google" {
   project = "${var.project}"
 }
 
-module "vpc" {
-  source  = "../../modules/vpc"
-  project = "${var.project}"
-  env     = "${local.env}"
-}
+# module "vpc" {
+#   source  = "../../modules/vpc"
+#   project = "${var.project}"
+#   env     = "${local.env}"
+# }
 
-resource "google_project_services" "project" {
+resource "google_project_service" "project" {
   project = "${var.project}"
   services   = ["iam.googleapis.com", "cloudresourcemanager.googleapis.com", "cloudbilling.googleapis.com", "compute.googleapis.com"]
 }
