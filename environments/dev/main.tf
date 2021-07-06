@@ -27,11 +27,11 @@ resource "google_storage_bucket" "bucket-for-state" {
   uniform_bucket_level_access = true 
 }
 
-# module "vpc" {
-#   source  = "../../modules/vpc"
-#   project = "${var.project}"
-#   env     = "${local.env}"
-# }
+module "vpc" {
+  source  = "../../modules/vpc"
+  project = "${var.project}"
+  env     = "${local.env}"
+}
 
 # resource "google_project_service" "project" {
 #   project = "${var.project}"
