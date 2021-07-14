@@ -21,20 +21,27 @@ provider "google" {
   project = "${var.project}"
 }
 
+resource "google_storage_bucket" "bucket-for-state" {
+  name = "customercloud-deployment-terraform-state-alek"
+  location = "EU"
+  uniform_bucket_level_access = true 
+}
+
 module "vpc" {
   source  = "../../modules/vpc"
   project = "${var.project}"
-  env     = "${local.env}"
+  env     = "${local.env}"   
 }
 
-module "http_server" {
-  source  = "../../modules/http_server"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
+# resource "google_project_service" "project" {
+#   project = "${var.project}"
+#   service   = "cloudbilling.googleapis.com"
+# }
 
-module "firewall" {
-  source  = "../../modules/firewall"
-  project = "${var.project}"
-  subnet  = "${module.vpc.subnet}"
-}
+#auto created bucket, vpc, clean up, move to test/prod
+#required persmissions: serviceusage.services.enable
+
+# is it possible to create new bucket and store state there within first run of configuration file? or you must update it?
+
+# 1. manually create bucket 
+# 2. enable compute engine API to create VPC (missing permission: serviceusage.services.enable) (are we able to add them ourselfs?)
