@@ -44,4 +44,5 @@ module "vpc" {
 # is it possible to create new bucket and store state there within first run of configuration file? or you must update it?
 
 # 1. manually create bucket 
-# 2. enable compute engine API to create VPC (missing permission: serviceusage.services.enable) (are we able to add them ourselfs?)
+# 2. enable compute engine API to create VPC (missing permission: serviceusage.services.enable, compute.networks.create) 
+# 3. give required persmission to the CloudBuild Service account 
